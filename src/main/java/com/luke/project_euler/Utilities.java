@@ -1,7 +1,6 @@
 package com.luke.project_euler;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class Utilities {
 
@@ -13,7 +12,7 @@ public class Utilities {
 	 * If we list all the natural numbers below 10 that are multiples of 3 or 5, we
 	 * get 3, 5, 6 and 9. The sum of these multiples is 23.
 	 * 
-	 * O(nm) m = multiples n = numbers
+	 * O(N)
 	 * 
 	 * @param startingFrom
 	 * @return
@@ -32,6 +31,9 @@ public class Utilities {
 
 	/**
 	 * Takes the sum of the multiples
+	 * 
+	 * O(N)
+	 * 
 	 * @param limit
 	 * @param multiple
 	 * @return
@@ -44,6 +46,12 @@ public class Utilities {
 	}
 	
 	
+	/**
+	 * Returns an array which contains only evens with the size reduced appropriately
+	 * O(N)
+	 * @param arr
+	 * @return
+	 */
 	public static int[] findEvens(int[] arr) {
 		ArrayList<Integer> evens = new ArrayList<>();
 		

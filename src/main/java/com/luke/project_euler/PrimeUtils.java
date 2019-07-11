@@ -15,7 +15,8 @@ public class PrimeUtils {
 	
 	
 	/**
-	 * Determines wether or not a number is prime
+	 * O(1)
+	 * Determines whether or not a number is prime
 	 * @param number
 	 * @return
 	 */
