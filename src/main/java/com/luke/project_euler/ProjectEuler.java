@@ -1,25 +1,31 @@
 package com.luke.project_euler;
 
 import java.io.PrintStream;
+import java.util.Stack;
 
 /**
  * Runner for all of Project Euler Questions
+ * 
  * @author ladan
  *
  */
 public class ProjectEuler {
-	
+
 	/**
 	 * Runs all problems and outputs to Standard output stream
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		String FORMAT = "The answer to Problem %d is: %d\n";
 		PrintStream p = new PrintStream(System.out);
-		
-		p.printf(FORMAT, 1,problemOne(1000));
-		p.printf(FORMAT, 2,problemTwo(4000000));
-		
+
+		p.printf(FORMAT, 1, problemOne(1000));
+		p.printf(FORMAT, 2, problemTwo(4000000));
+		p.printf(FORMAT, 3, problemThree(600851475143L));
+		p.printf(FORMAT, 4, problemFour());
+		p.printf(FORMAT, 5, problemFive());
+
 	}
 
 	/**
@@ -67,9 +73,68 @@ public class ProjectEuler {
 	 * @param input
 	 * @return
 	 */
-	public static int problemThree(long input) {
+	public static long problemThree(long input) {
+
+		long[] primeFactors = PrimeUtils.findPrimeFactors(input);
+		long max = 0;
+
+		for (long each : primeFactors) {
+			if (max < each && each != input)
+				max = each;
+		}
+		return max;
+	}
+
+	/**
+	 * A palindromic number reads the same both ways. The largest palindrome made
+	 * from the product of two 2-digit numbers is 9009 = 91 × 99.
+	 * 
+	 * Find the largest palindrome made from the product of two 3-digit numbers.
+	 * 
+	 * @param input
+	 * @return largest palindrome product
+	 */
+	public static long problemFour() {
+
+		long num = 999 * 999;
+		int ceiling = 1000;
+		for (long i = num; i > 0; i--) {
+			if (Utilities.isPalindrome(i)) {
+				long[] arr = Utilities.findFactorsLessThan(i, ceiling);
+
+				if (arr.length > 1)
+					if (arr[Utilities.maxIndex(arr)] < ceiling) {
+						return i;
+					}
+			}
+		}
 
 		return 0;
+
+	}
+
+	/**
+	 * 2520 is the smallest number that can be divided by each of the numbers from 1
+	 * to 10 without any remainder.
+	 * 
+	 * What is the smallest positive number that is evenly divisible by all of the
+	 * numbers from 1 to 20?
+	 * 
+	 * @return number divisible by all in range
+	 */
+	public static long problemFive() {
+
+		int low = 1;
+		int high = 20;
+
+		return Utilities.evenlyDivisibleByRange(low, high);
+	}
+	
+	/**
+	 * @return
+	 */
+	public static long problemSix() {
+		return 0L;
 	}
 
 }
