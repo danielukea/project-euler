@@ -1,7 +1,6 @@
 package com.luke.project_euler;
 
 import java.io.PrintStream;
-import java.util.Stack;
 
 /**
  * Runner for all of Project Euler Questions
@@ -25,6 +24,8 @@ public class ProjectEuler {
 		p.printf(FORMAT, 3, problemThree(600851475143L));
 		p.printf(FORMAT, 4, problemFour());
 		p.printf(FORMAT, 5, problemFive());
+		p.printf(FORMAT, 6, problemSix());
+		p.printf(FORMAT, 7, problemSeven());
 
 	}
 
@@ -129,12 +130,45 @@ public class ProjectEuler {
 
 		return Utilities.evenlyDivisibleByRange(low, high);
 	}
-	
+
 	/**
-	 * @return
+	 * The sum of the squares of the first ten natural numbers is,
+	 * 
+	 * 12 + 22 + ... + 102 = 385 The square of the sum of the first ten natural
+	 * numbers is,
+	 * 
+	 * (1 + 2 + ... + 10)2 = 552 = 3025 Hence the difference between the sum of the
+	 * squares of the first ten natural numbers and the square of the sum is 3025 −
+	 * 385 = 2640.
+	 * 
+	 * Find the difference between the sum of the squares of the first one hundred
+	 * natural numbers and the square of the sum.
 	 */
 	public static long problemSix() {
-		return 0L;
+
+		return Utilities.squareOfSumUnder(100) - Utilities.sumOfSquares(100);
+	}
+
+	/**
+	 * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see
+	 * that the 6th prime is 13.
+	 * 
+	 * What is the 10 001st prime number?
+	 * @ return 
+	 */
+	public static int problemSeven() {
+		int prime = 0;
+		int number = 10001;
+		int counter = 0;
+		
+		while(counter <= number) {
+			prime++;
+			if(PrimeUtils.isPrime(prime)) {
+				counter++;
+			}
+		}
+		
+		return prime;
 	}
 
 }

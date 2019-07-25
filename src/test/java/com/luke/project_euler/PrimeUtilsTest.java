@@ -28,7 +28,6 @@ class PrimeUtilsTest {
 	void testIsPrimeShouldReturnFalse(long number) {
 		
 		Assertions.assertThat(PrimeUtils.isPrime(number)).isFalse();
-
 	}
 	
 

@@ -89,5 +89,19 @@ class UtilitiesTest {
 		
 		Assertions.assertThat(Utilities.evenlyDivisibleByRange(low, high)).isEqualTo(expected);
 	}
+	
+	@ParameterizedTest
+	@CsvSource({"10 ,385"})
+	void sumOfSquaresShouldReturnExpected(int number, int expected) {
+		
+		Assertions.assertThat(Utilities.sumOfSquares(number)).isEqualTo(expected);
+	}
+	
+	@ParameterizedTest
+	@CsvSource({"10 ,3025"})
+	void squareOfSumUnderShouldReturnExpected(int number, int expected) {
+		
+		Assertions.assertThat(Utilities.squareOfSumUnder(number)).isEqualTo(expected);
+	}
 
 }

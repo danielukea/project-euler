@@ -206,4 +206,29 @@ public class Utilities {
 		return counter;
 	}
 
+	
+	/**
+	 * @param number
+	 * @return the sume of squares of all natural numbers under number
+	 */
+	public static long sumOfSquares(long number) {
+		long sum = 0l;
+		for(int i = 1; i <= number; i++) {
+			sum += Math.pow(i, 2);
+		}
+		return sum;
+	}
+	
+	/**
+	 * @param number
+	 * @return
+	 */
+	public static long squareOfSumUnder(long number) {
+		int sum = 0;
+		for(long i = 1; i <= number; i++) {
+			sum += i;
+		}
+		sum = (int) Math.pow(sum, 2);
+		return sum;
+	}
 }

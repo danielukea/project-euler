@@ -39,4 +39,8 @@ public class PrimeUtils {
 		return true;
 	}
 
+	public static void primesUnder(int i) {
+		
+	}
+
 }
