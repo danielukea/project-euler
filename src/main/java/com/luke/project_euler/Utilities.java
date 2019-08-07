@@ -3,6 +3,7 @@ package com.luke.project_euler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
+import java.util.function.IntPredicate;
 
 public class Utilities {
 
@@ -253,5 +254,10 @@ public class Utilities {
 			product *= Character.getNumericValue(arr[k]);
 		}
 		return product;
+	}
+
+	public static boolean isPythagorean(int a, int b, int c) {
+		
+		return Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2);
 	}
 }

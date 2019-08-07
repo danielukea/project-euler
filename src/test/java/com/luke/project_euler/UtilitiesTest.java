@@ -118,8 +118,15 @@ class UtilitiesTest {
 		
 		char[] arr = {'1','2','3','4','5','6','7'};
 		
-		Assertions.assertThat(Utilities.product(2,4,arr)).isEqualTo(60l);
+		Assertions.assertThat(Utilities.product(2,4,arr)).isEqualTo(60l);	
+	}
+	
+	
+	@ParameterizedTest
+	@CsvSource({"3,4,5","5,12,13","115,252,277"})
+	void isPythagoreanTripletShouldReturnTrue(int a, int b, int c) {
 		
+		Assertions.assertThat(Utilities.isPythagorean( a, b, c)).isTrue();
 	}
 
 }
