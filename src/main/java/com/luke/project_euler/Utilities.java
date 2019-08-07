@@ -231,4 +231,27 @@ public class Utilities {
 		sum = (int) Math.pow(sum, 2);
 		return sum;
 	}
+	
+
+	public static long product(int i, int j, int[] arr) {
+		if(j > arr.length - 1) {
+			throw new RuntimeException("j must be less than arr.length");
+		}
+		long product = 1;
+		for(int k = i; k <= j; k++) {
+			product *= arr[k];
+		}
+		return product;
+	}
+	
+	public static long product(int i, int j, char[] arr) {
+		if(j > arr.length - 1) {
+			throw new RuntimeException("j must be less than arr.length");
+		}
+		long product = 1;
+		for(int k = i; k <= j; k++) {
+			product *= Character.getNumericValue(arr[k]);
+		}
+		return product;
+	}
 }

@@ -103,5 +103,23 @@ class UtilitiesTest {
 		
 		Assertions.assertThat(Utilities.squareOfSumUnder(number)).isEqualTo(expected);
 	}
+	
+	@Test
+	void productOfRangeShouldReturnExpected() {
+		
+		int[] arr = {1,2,3,4,5,6,7,10};
+		
+		Assertions.assertThat(Utilities.product(2,4,arr)).isEqualTo(60l);
+		
+	}
+	
+	@Test
+	void productOfRangeShouldReturnExpectedChar() {
+		
+		char[] arr = {'1','2','3','4','5','6','7'};
+		
+		Assertions.assertThat(Utilities.product(2,4,arr)).isEqualTo(60l);
+		
+	}
 
 }
